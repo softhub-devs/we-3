@@ -182,9 +182,17 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 48px;
+}
+.grid > div {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sub-title {
@@ -198,11 +206,13 @@ body {
 }
 
 .list {
-  list-style: disc inside;
+  width: fit-content;
+  text-align: left;
   color: #555;
 }
 
 .list li {
+  width: fit-content;
   margin-bottom: 8px;
 }
 
@@ -210,6 +220,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
 }
 
 .tags span {
@@ -219,7 +230,15 @@ body {
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
+  transition: background 0.3s, color 0.3s;
 }
+
+.tags span:hover {
+  background: #1d4ed8;
+  color: #dbeafe;
+  cursor: pointer;
+}
+
 
 .cta-text {
   margin: 24px 0;
